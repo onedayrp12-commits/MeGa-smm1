@@ -1,0 +1,13 @@
+name = "mega-smm"
+main = "src/worker.js"
+compatibility_date = "2026-11-25"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mega-smm-db"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"

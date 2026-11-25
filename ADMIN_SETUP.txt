@@ -1,0 +1,9 @@
+إعداد لوحة الإدارة:
+- أنشئ Worker Secret باسم ADMIN_KEY من لوحة Cloudflare أو عبر wrangler secret put ADMIN_KEY.
+- قيمة ADMIN_KEY تكون كلمة سر طويلة وعشوائية لا تشاركها مع العملاء.
+- استدعاءات الإدارة الحالية:
+  GET /api/admin/orders مع Header: X-Admin-Key: قيمة المفتاح
+  PATCH /api/admin/orders/status مع JSON: {"id":1,"status":"قيد التنفيذ"}
+  GET /api/admin/topups
+  POST /api/admin/topups/approve مع JSON: {"id":1}
+- هذه واجهات إدارة API وليست لوحة مرئية بعد. لا تضع المفتاح في ملفات public أو JavaScript.
